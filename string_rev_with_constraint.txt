@@ -1,0 +1,47 @@
+import java.util.*;
+public class Main{
+public static void main(String arg[])
+{
+int i,k;
+String a;
+Scanner o=new Scanner(System.in);
+a=o.nextLine();
+char str[]=a.toCharArray();
+int len=str.length;
+int j=len-1;
+char str2[]=new char[len];
+for(i=0;i<len;i++)
+{
+ if(str[i]>='a'&&str[i]<='z')
+{
+if(str[j]>='a'&&str[j]<='z')
+{
+
+str2[i]=str[j];
+j--;
+}
+else
+{
+
+for(k=j;k>=0;k--)
+{
+if(str[k]>='a'&&str[k]<='z')
+break;
+}
+str2[i]=str[k];
+j=k;
+j--;
+
+ }
+}
+else
+{
+str2[i]=str[i];
+continue;
+}
+ 
+}
+String b=new String(str2);
+System.out.println(b);
+}
+}
